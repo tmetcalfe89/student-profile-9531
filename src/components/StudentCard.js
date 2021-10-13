@@ -7,7 +7,6 @@ function StudentCard({
   student: { pic, firstName, lastName, email, company, skill, grades, tags },
   addTag,
 }) {
-  console.log(addTag);
   const tagInputRef = useRef(null);
 
   const [expanded, setExpanded] = useState(false);
