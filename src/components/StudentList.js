@@ -20,7 +20,7 @@ function StudentList() {
     if (students.length === 0) {
       getStudents();
     }
-  }, []);
+  }, [setStudents, students.length]);
 
   const updateFilter = (event) => {
     setFilters({
@@ -65,7 +65,11 @@ function StudentList() {
       />
       <div className="student-list">
         {getFilteredStudents().map((student, index) => (
-          <StudentCard student={student} addTag={(tag) => addTag(index, tag)} />
+          <StudentCard
+            student={student}
+            addTag={(tag) => addTag(index, tag)}
+            key={`student-card-${index}`}
+          />
         ))}
       </div>
     </div>
