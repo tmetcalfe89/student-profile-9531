@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import StudentList from "./components/StudentList";
 
 function App() {
   const [studentList, setStudentList] = useState([]);
@@ -14,7 +15,11 @@ function App() {
     getStudents();
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <StudentList students={studentList} />
+    </div>
+  );
 }
 
 export default App;
