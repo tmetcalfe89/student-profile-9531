@@ -1,11 +1,11 @@
 import React from "react";
 import Tag from "./Tag";
 
-function TagList({ tags }) {
+function TagList({ tags, removeTag }) {
   return (
     <div>
-      {tags.map((tag) => (
-        <Tag tag={tag} />
+      {tags.map((tag, index) => (
+        <Tag tag={tag} removeTag={() => removeTag(index)} />
       ))}
     </div>
   );

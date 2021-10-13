@@ -6,6 +6,7 @@ import "./StudentCard.css";
 function StudentCard({
   student: { pic, firstName, lastName, email, company, skill, grades, tags },
   addTag,
+  removeTag,
 }) {
   const tagInputRef = useRef(null);
 
@@ -37,7 +38,7 @@ function StudentCard({
           <div>Company: {company}</div>
           <div>Skill: {skill}</div>
           <div>Average: {average(...grades)}%</div>
-          {tags.length > 0 && <TagList tags={tags} />}
+          {tags.length > 0 && <TagList tags={tags} removeTag={removeTag} />}
           <form onSubmit={submitTag}>
             <input
               placeholder="Add a tag"

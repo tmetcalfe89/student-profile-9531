@@ -49,6 +49,14 @@ function StudentList() {
     setStudents(newStudents);
   };
 
+  const removeTag = (studentIndex, tagIndex) => {
+    const newStudents = [...students];
+    newStudents[studentIndex].tags = newStudents[studentIndex].tags.filter(
+      (tag, index) => tagIndex !== index
+    );
+    setStudents(newStudents);
+  };
+
   return (
     <div className="student-list-container">
       <input
@@ -68,6 +76,7 @@ function StudentList() {
           <StudentCard
             student={student}
             addTag={(tag) => addTag(index, tag)}
+            removeTag={(tagIndex) => removeTag(index, tagIndex)}
             key={`student-card-${index}`}
           />
         ))}
