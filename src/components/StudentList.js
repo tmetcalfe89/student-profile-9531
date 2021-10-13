@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import StudentCard from "./StudentCard";
+import useLocalStorage from "../hooks/useLocalStorage";
 import "./StudentList.css";
 
 function StudentList() {
   const [filters, setFilters] = useState({});
-  const [students, setStudents] = useState([]);
+  const [students, setStudents] = useLocalStorage("students", []);
 
   useEffect(() => {
     const getStudents = async () => {
@@ -16,7 +17,9 @@ function StudentList() {
         studentData.students.map((student) => ({ ...student, tags: [] }))
       );
     };
-    getStudents();
+    if (students.length === 0) {
+      getStudents();
+    }
   }, []);
 
   const updateFilter = (event) => {
