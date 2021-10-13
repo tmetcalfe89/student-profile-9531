@@ -20,15 +20,24 @@ function StudentList() {
   }, []);
 
   const updateFilter = (event) => {
-    setFilters({ ...filters, [event.target.name]: event.target.value });
+    setFilters({
+      ...filters,
+      [event.target.name]: event.target.value.toLowerCase(),
+    });
   };
 
   const getFilteredStudents = () => {
-    return students.filter(
-      ({ firstName, lastName }) =>
-        !filters.name ||
-        `${firstName} ${lastName}`.toLowerCase().includes(filters.name)
-    );
+    return students
+      .filter(
+        ({ firstName, lastName }) =>
+          !filters.name ||
+          `${firstName} ${lastName}`.toLowerCase().includes(filters.name)
+      )
+      .filter(
+        ({ tags }) =>
+          !filters.tag ||
+          tags.some((tag) => tag.toLowerCase().includes(filters.tag))
+      );
   };
 
   const addTag = (index, tag) => {

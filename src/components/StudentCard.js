@@ -11,7 +11,6 @@ function StudentCard({
   const tagInputRef = useRef(null);
 
   const [expanded, setExpanded] = useState(false);
-  // const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
 
   const average = (...arr) =>
