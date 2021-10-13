@@ -40,6 +40,6 @@
   margin-left: 2rem;
 }
 
-.student-card .data .details div {
+.student-card .data .details > div {
   padding-bottom: 0.5rem;
 }
