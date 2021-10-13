@@ -45,7 +45,7 @@ function StudentList() {
 
   const addTag = (index, tag) => {
     const newStudents = [...students];
-    newStudents[index].tags.push(tag);
+    newStudents[index].tags = [...new Set([...newStudents[index].tags, tag])];
     setStudents(newStudents);
   };
 
