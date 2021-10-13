@@ -3,6 +3,9 @@ import TestScores from "./TestScores";
 import TagList from "./TagList";
 import "./StudentCard.css";
 
+const average = (...arr) =>
+  arr.map((e) => +e).reduce((acc, e) => acc + e, 0) / arr.length;
+
 function StudentCard({
   student: { pic, firstName, lastName, email, company, skill, grades, tags },
   addTag,
@@ -12,9 +15,6 @@ function StudentCard({
 
   const [expanded, setExpanded] = useState(false);
   const [tagInput, setTagInput] = useState("");
-
-  const average = (...arr) =>
-    arr.map((e) => +e).reduce((acc, e) => acc + e, 0) / arr.length;
 
   const toggleExpanded = () => setExpanded(!expanded);
 
