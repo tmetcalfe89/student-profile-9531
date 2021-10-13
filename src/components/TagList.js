@@ -5,7 +5,7 @@ function TagList({ tags, removeTag }) {
   return (
     <div>
       {tags.map((tag, index) => (
-        <Tag tag={tag} removeTag={() => removeTag(index)} />
+        <Tag tag={tag} removeTag={() => removeTag(index)} key={tag} />
       ))}
     </div>
   );
