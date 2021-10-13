@@ -1,11 +1,10 @@
 .student-list {
-  width: 75%;
+  width: 60%;
   height: 80%;
   overflow-y: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 5px 5px 5px lightgrey;
-  padding: 0 1rem;
 }
 
 .student-list::-webkit-scrollbar {

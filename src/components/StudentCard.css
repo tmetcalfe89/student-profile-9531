@@ -1,0 +1,35 @@
+.student-card {
+  display: flex;
+  align-items: center;
+  border: 1px #efefef solid;
+  padding: 1rem 2rem;
+}
+
+.student-card .profile-pic {
+  width: fit-content;
+}
+
+.student-card .profile-pic img {
+  height: 125px;
+  border-radius: 100%;
+  border: 2px #efefef solid;
+}
+
+.student-card h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.student-card .data {
+  padding-left: 3rem;
+}
+
+.student-card .data .details {
+  margin-left: 2rem;
+}
+
+.student-card .data .details div {
+  padding-bottom: 0.5rem;
+}
