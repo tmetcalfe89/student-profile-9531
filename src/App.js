@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StudentList from "./components/StudentList";
+import "./App.css";
 
 function App() {
   const [studentList, setStudentList] = useState([]);
@@ -16,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       <StudentList students={studentList} />
     </div>
   );
