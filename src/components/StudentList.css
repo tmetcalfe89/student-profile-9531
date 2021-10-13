@@ -30,6 +30,10 @@
 }
 
 .student-list-container input:focus {
+  border-bottom: 1px grey solid;
+}
+
+.student-list-container input:focus {
   outline: none;
 }
 
