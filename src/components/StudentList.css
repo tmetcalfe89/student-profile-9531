@@ -1,0 +1,29 @@
+.student-list {
+  width: 75%;
+  height: 80%;
+  overflow-y: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+  padding: 0 1rem;
+}
+
+.student-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.student-list::-webkit-scrollbar-track {
+  background: #efefef;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+  background: #dedede;
+}
+
+.student-list::-webkit-scrollbar-thumb:hover {
+  background: #cdcdcd;
+}
+
+.student-list::-webkit-scrollbar-thumb:active {
+  background: green;
+}
