@@ -9,13 +9,17 @@ function StudentList() {
 
   useEffect(() => {
     const getStudents = async () => {
-      const studentResponse = await fetch(
-        "https://api.hatchways.io/assessment/students"
-      );
-      const studentData = await studentResponse.json();
-      setStudents(
-        studentData.students.map((student) => ({ ...student, tags: [] }))
-      );
+      try {
+        const studentResponse = await fetch(
+          "https://api.hatchways.io/assessment/students"
+        );
+        const studentData = await studentResponse.json();
+        setStudents(
+          studentData.students.map((student) => ({ ...student, tags: [] }))
+        );
+      } catch (err) {
+        console.error("Unable to retrieve students from API.");
+      }
     };
     if (students.length === 0) {
       getStudents();
