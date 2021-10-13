@@ -4,12 +4,14 @@ import TagList from "./TagList";
 import "./StudentCard.css";
 
 function StudentCard({
-  student: { pic, firstName, lastName, email, company, skill, grades },
+  student: { pic, firstName, lastName, email, company, skill, grades, tags },
+  addTag,
 }) {
+  console.log(addTag);
   const tagInputRef = useRef(null);
 
   const [expanded, setExpanded] = useState(false);
-  const [tags, setTags] = useState([]);
+  // const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
 
   const average = (...arr) =>
@@ -17,9 +19,9 @@ function StudentCard({
 
   const toggleExpanded = () => setExpanded(!expanded);
 
-  const addTag = (e) => {
+  const submitTag = (e) => {
     e.preventDefault();
-    setTags([...tags, tagInputRef.current.value]);
+    addTag(tagInputRef.current.value);
     setTagInput("");
   };
 
@@ -38,7 +40,7 @@ function StudentCard({
           <div>Skill: {skill}</div>
           <div>Average: {average(...grades)}%</div>
           {tags.length > 0 && <TagList tags={tags} />}
-          <form onSubmit={addTag}>
+          <form onSubmit={submitTag}>
             <input
               placeholder="Add a tag"
               value={tagInput}
