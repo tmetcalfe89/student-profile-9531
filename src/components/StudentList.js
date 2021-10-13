@@ -77,7 +77,7 @@ function StudentList() {
             student={student}
             addTag={(tag) => addTag(index, tag)}
             removeTag={(tagIndex) => removeTag(index, tagIndex)}
-            key={`student-card-${index}`}
+            key={`student-card-${student.id}`}
           />
         ))}
       </div>
